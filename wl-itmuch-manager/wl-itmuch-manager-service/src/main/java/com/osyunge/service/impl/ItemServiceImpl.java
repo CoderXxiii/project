@@ -14,6 +14,7 @@ public class ItemServiceImpl implements ItemService {
 
     @Override
     public TbItem getItemById(long id) {
-        return tbItemMapper.getItemById(id);
+        //return tbItemMapper.getItemById(id);
+        return null;
     }
 }

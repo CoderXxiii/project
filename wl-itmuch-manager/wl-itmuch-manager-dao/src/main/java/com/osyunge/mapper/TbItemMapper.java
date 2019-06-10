@@ -1,11 +1,22 @@
 package com.osyunge.mapper;
 
 import com.osyunge.pojo.TbItem;
+import com.osyunge.pojo.TbItemExample;
+import java.util.List;
+import org.apache.ibatis.annotations.Param;
 
 public interface TbItemMapper {
+    long countByExample(TbItemExample example);
+
+    int deleteByExample(TbItemExample example);
+
     int insert(TbItem record);
 
     int insertSelective(TbItem record);
 
-    TbItem getItemById(long id);
+    List<TbItem> selectByExample(TbItemExample example);
+
+    int updateByExampleSelective(@Param("record") TbItem record, @Param("example") TbItemExample example);
+
+    int updateByExample(@Param("record") TbItem record, @Param("example") TbItemExample example);
 }
